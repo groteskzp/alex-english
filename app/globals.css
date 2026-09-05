@@ -1,26 +1,142 @@
-@import "tailwindcss";
+/* ============================================
+   ШРИФТИ
+   ============================================ */
+
+@font-face {
+  font-family: "KyivType Sans";
+  src: url("/fonts/KyivTypeSans-Regular.woff2") format("woff2");
+  font-weight: 350;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "KyivType Sans";
+  src: url("/fonts/KyivTypeSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "KyivType Sans";
+  src: url("/fonts/KyivTypeSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "KyivType Titling";
+  src: url("/fonts/KyivTypeTitling-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================
+   ТОКЕНИ
+   ============================================ */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* кольори */
+  --c-blue: #2a6486;
+  --c-sky: #4fb1e9;
+  --c-light-blue: #a9d4f7;
+  --c-orange: #e9874f;
+  --c-light-orange: #f3baa5;
+  --c-back: #fcfaf7;
+  --c-white: #ffffff;
+  --c-text: #202020;
+  --c-muted: #6b6b73;
+
+  /* прозорі */
+  --c-back-48: rgba(252, 250, 247, 0.48);
+  --c-back-80: rgba(252, 250, 247, 0.8);
+
+  /* градієнт */
+  --g-soft: linear-gradient(116.82deg, #e7f2fd 0%, #fbece8 100%);
+
+  /* шрифти */
+  --font-sans: "KyivType Sans", sans-serif;
+  --font-titling: "KyivType Titling", sans-serif;
+
+  /* радіуси */
+  --r-btn: 16px;
+  --r-card: 24px;
+  --r-block: 32px;
+
+  /* контейнер */
+  --container: 1440px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ============================================
+   RESET
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-weight: 350;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--c-text);
+  background: var(--c-back);
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-size: inherit;
+  font-weight: inherit;
 }

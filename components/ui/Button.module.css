@@ -1,0 +1,16 @@
+.button {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: var(--r-btn);
+  background: var(--c-blue);
+  color: var(--c-back);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  transition: opacity 0.2s ease;
+}
+
+.button:hover {
+  opacity: 0.9;
+}

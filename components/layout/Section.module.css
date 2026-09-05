@@ -1,0 +1,35 @@
+.section {
+  width: 100%;
+}
+
+.inner {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 40px 16px;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    padding: 40px 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .inner {
+    padding: 60px 72px;
+  }
+}
+
+.back {
+  background: var(--c-back);
+}
+
+.gradient {
+  background: var(--g-soft);
+}
+
+.blue {
+  background: var(--c-blue);
+  color: var(--c-back);
+}

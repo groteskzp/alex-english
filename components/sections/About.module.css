@@ -1,0 +1,206 @@
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+@media (min-width: 768px) {
+  .row {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .row {
+    position: relative;
+    gap: 72px;
+  }
+}
+
+/* ---------- медіа ---------- */
+
+.media {
+  --sq: 324px;
+  --off: 24px;
+
+  order: 2;
+  position: relative;
+  width: 100%;
+  max-width: var(--sq);
+}
+
+@media (min-width: 768px) {
+  .media {
+    order: 1;
+    /* може стискатись, щоб не з'їдати текстову колонку */
+    flex: 0 1 48%;
+    min-width: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .media {
+    --sq: 526px;
+  }
+}
+
+.backing {
+  position: absolute;
+  top: calc(-1 * var(--off));
+  left: var(--off);
+  z-index: 0;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 70px;
+  background: var(--c-light-blue);
+}
+
+/* фото в потоці — від нього висота .row, як 526 Hug */
+.photoWrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 70px;
+}
+
+/* ---------- бейдж ---------- */
+
+.badge {
+  position: absolute;
+  right: -20px;
+  bottom: -10px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 188px;
+  max-width: 100%;
+  padding: 6px 12px;
+  border-radius: 32px;
+  background: var(--c-orange);
+  color: var(--c-white);
+  transform: rotate(-1deg);
+}
+
+@media (min-width: 1024px) {
+  .badge {
+    bottom: -9px;
+    width: 244px;
+    padding: 8px 16px;
+  }
+}
+
+.badgeValue {
+  flex-shrink: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.badgeLabel {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+@media (min-width: 1024px) {
+  .badgeValue {
+    font-size: 24px;
+  }
+
+  .badgeLabel {
+    font-size: 12px;
+  }
+}
+
+.arrow {
+  display: none;
+}
+
+.arrowAB {
+  position: absolute;
+  top: -12px;
+  left: -10px;
+  z-index: 3;
+  width: 30px;
+  max-width: none;
+  height: auto;
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .arrow {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    width: 100px;
+    transform: translateY(-50%);
+    color: #000;
+  }
+}
+
+/* ---------- текст ---------- */
+
+.content {
+  order: 1;
+}
+
+@media (min-width: 768px) {
+  .content {
+    order: 2;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.wave {
+  width: 32px;
+  color: var(--c-sky);
+}
+
+@media (min-width: 1024px) {
+  .wave {
+    width: 58px;
+  }
+}
+
+.text {
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 350;
+  line-height: 1.5;
+}
+
+@media (min-width: 1024px) {
+  .title {
+    margin-top: 16px;
+    font-size: 48px;
+  }
+
+  .text {
+    margin-top: 16px;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+}

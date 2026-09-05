@@ -1,0 +1,7 @@
+.icon {
+  display: block;
+  flex-shrink: 0;
+  max-width: none;
+  height: auto;
+  color: currentColor;
+}

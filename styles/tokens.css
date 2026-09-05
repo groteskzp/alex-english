@@ -1,0 +1,103 @@
+/* ============================================
+   Alex English — design tokens
+   Джерело: Figma (Variables немає, зібрано вручну
+   через плагін Inspect Styles)
+   ============================================ */
+
+:root {
+  /* ---------- Кольори ---------- */
+  --c-blue:         #2A6486;  /* темні секції, кнопки, футер */
+  --c-sky:          #4FB1E9;  /* акцент у заголовках, іконки, чипи */
+  --c-light-blue:   #A9D4F7;  /* картка Contact, бордери карток */
+  --c-orange:       #E9874F;  /* лого, eyebrow, ціни, бейджі */
+  --c-light-orange: #F3BAA5;  /* декор, підкладки фото */
+  --c-back:         #FCFAF7;  /* кремовий фон + текст на темних секціях */
+  --c-white:        #FFFFFF;
+  --c-text:         #202020;
+  --c-text-muted:   #6B6B73;
+
+  /* Прозорі варіанти (є в макеті) */
+  --c-sky-08:          rgba(79, 177, 233, 0.08);
+  --c-sky-20:          rgba(79, 177, 233, 0.20);
+  --c-orange-08:       rgba(233, 135, 79, 0.08);
+  --c-orange-16:       rgba(233, 135, 79, 0.16);
+  --c-orange-20:       rgba(233, 135, 79, 0.20);
+  --c-light-orange-08: rgba(243, 186, 165, 0.08);
+
+  /* Градієнт — один на весь сайт (hero, Lessons, Reviews, FAQ) */
+  --g-soft: linear-gradient(116.82deg, #E7F2FD 0%, #FBECE8 100%);
+
+  /* ---------- Шрифти ---------- */
+  --font-sans:    "KyivType Sans", sans-serif;
+  --font-titling: "KyivType Titling", sans-serif;
+
+  --fw-regular: 350;  /* УВАГА: 350, не 400 */
+  --fw-medium:  500;  /* основна вага сайту */
+  --fw-bold:    700;
+
+  /* ---------- Spacing ---------- */
+  --sp-16: 16px;
+  --sp-18: 18px;
+  --sp-20: 20px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-40: 40px;
+
+  /* ---------- Radius ---------- */
+  --r-card:  24px;   /* картки уроків */
+  --r-block: 32px;   /* великі блоки */
+
+  /* ---------- Бордери ---------- */
+  --border-hair: 0.5px solid var(--c-light-blue);
+}
+
+/* ============================================
+   ТИПОГРАФІЧНА ШКАЛА
+   KyivType Sans · letter-spacing 0 · lh у відносних
+   ============================================ */
+
+/* --- Desktop 1440 --- */
+.t-h1      { font-size: 48px; line-height: 1.2; font-weight: 700; color: var(--c-text); }
+.t-h2      { font-size: 48px; line-height: 1.2; font-weight: 700; color: var(--c-text); }
+.t-h3      { font-size: 32px; line-height: 1.2; font-weight: 500; color: var(--c-text); }
+.t-body    { font-size: 20px; line-height: 1.6; font-weight: 350; color: var(--c-text); }
+.t-list    { font-size: 20px; line-height: 1.6; font-weight: 350; color: var(--c-text-muted); }
+.t-price   { font-size: 64px; line-height: 1.2; font-weight: 700; color: var(--c-orange); }
+.t-caption { font-size: 12px; line-height: 1.5; font-weight: 500; color: var(--c-text-muted); }
+.t-eyebrow { font-size: 12px; line-height: 1.5; font-weight: 500; color: var(--c-orange); }
+.t-logo    { font-family: var(--font-titling); font-size: 24px;
+             line-height: 1.5; font-weight: 700; color: var(--c-orange); }
+
+/* --- Mobile 375 --- */
+/* h1 28/1.2/700 · body 16/1.5/350
+   TODO: h2, h3, price для мобайла — не зняті, вивести пропорційно */
+
+/* --- Tablet 768 --- */
+/* TODO */
+
+/* На темних секціях текст = var(--c-back) */
+
+/* ============================================
+   ПАТЕРН СЕКЦІЙ
+   mobile:  padding 40px 16px · gap 24px
+   tablet:  padding 40px 24px · gap 32px
+   desktop: TODO
+   ============================================ */
+
+/* ============================================
+   ШРИФТИ
+   KyivType немає в Google Fonts.
+   kyivtype.com -> OTF -> конвертувати в woff2.
+   У CSS назва БЕЗ зірочки.
+   Titling потрібен лише для лого (6 входжень).
+   ============================================ */
+
+/*
+@font-face {
+  font-family: "KyivType Sans";
+  src: url("/fonts/KyivTypeSans-Regular.woff2") format("woff2");
+  font-weight: 350;
+  font-style: normal;
+  font-display: swap;
+}
+*/

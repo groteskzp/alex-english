@@ -1,0 +1,160 @@
+.footer {
+  background: var(--c-blue);
+  color: var(--c-back);
+}
+
+.inner {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 40px 16px;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    padding: 40px 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .inner {
+    padding: 60px 72px;
+  }
+}
+
+/* ---------- верхня частина ---------- */
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .top {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+  }
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  gap: 8px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .brand {
+    align-items: flex-start;
+    align-self: flex-start;
+    text-align: left;
+  }
+}
+
+.logo {
+  font-family: var(--font-titling);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--c-orange);
+}
+
+.tagline {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@media (min-width: 1024px) {
+  .logo {
+    font-size: 32px;
+  }
+
+  .tagline {
+    font-size: 16px;
+  }
+}
+
+/* ---------- колонки посилань ---------- */
+
+.columns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .columns {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+    text-align: left;
+  }
+}
+
+@media (min-width: 1024px) {
+  .columns {
+    gap: 72px;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .column {
+    align-items: flex-start;
+  }
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  font-weight: 350;
+  line-height: 1.5;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--c-orange);
+}
+
+.arrow {
+  width: 24px;
+  color: currentColor;
+}
+
+@media (min-width: 1024px) {
+  .link {
+    font-size: 20px;
+  }
+}
+
+/* ---------- нижня частина ---------- */
+
+.bottom {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(252, 250, 247, 0.3);
+  text-align: left;
+}
+
+.copy {
+  font-size: 12px;
+  font-weight: 350;
+  line-height: 1.5;
+}

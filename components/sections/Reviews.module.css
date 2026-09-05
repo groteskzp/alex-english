@@ -1,0 +1,207 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(116.82deg, #e7f2fd 0%, #fbece8 100%);
+}
+
+.scribble {
+  position: absolute;
+  top: calc(100% / 3);
+  right: 0;
+  z-index: 0;
+  width: 1440px;
+  max-width: none;
+  height: auto;
+  transform: translateY(-75%) rotate(2deg);
+  pointer-events: none;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .scribble {
+    top: calc(100% / 3 + 130px);
+    right: -80%;
+    rotate: 5deg;
+
+  }
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  margin-top: 16px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.text {
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 350;
+  line-height: 1.5;
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 48px;
+  }
+
+  .text {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+}
+
+/* ---------- слайдер ---------- */
+
+.slider {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  /* витягуємо за падінги секції, щоб картки їхали від краю екрана */
+  margin-inline: -16px;
+  padding-inline: 16px;
+  padding-bottom: 8px;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .slider {
+    gap: 24px;
+    margin-inline: -24px;
+    padding-inline: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .slider {
+    margin-top: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slider {
+    margin-inline: -72px;
+    padding-inline: 72px;
+  }
+}
+
+/* ---------- картка ---------- */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 12px;
+  width: 300px;
+  padding: 18px 20px;
+  border-radius: var(--r-card);
+  background: var(--c-white);
+  scroll-snap-align: start;
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: 340px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    width: 400px;
+    padding: 24px;
+  }
+}
+
+.mark {
+  width: 16px;
+}
+
+@media (min-width: 1024px) {
+  .mark {
+    width: 24px;
+  }
+}
+
+/* акценти картки: іконка й заголовок протилежних кольорів */
+.markOrange {
+  color: var(--c-orange);
+}
+
+.markSky {
+  color: var(--c-sky);
+}
+
+.quote {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.quoteSky {
+  color: var(--c-sky);
+}
+
+.quoteOrange {
+  color: var(--c-orange);
+}
+
+.cardText {
+  flex-grow: 1;
+  font-size: 14px;
+  font-weight: 350;
+  line-height: 1.5;
+}
+
+@media (min-width: 1024px) {
+  .quote {
+    font-size: 20px;
+  }
+
+  .cardText {
+    font-size: 16px;
+  }
+}
+
+/* автор */
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+  padding-top: 16px;
+  border-top: 1px solid var(--c-light-blue);
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.course {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--c-muted);
+}

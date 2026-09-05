@@ -1,0 +1,159 @@
+.header {
+  max-width: 720px;
+}
+
+.title {
+  margin-top: 16px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.text {
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 350;
+  line-height: 1.5;
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 48px;
+  }
+
+  .text {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+}
+
+/* ---------- список ---------- */
+
+.list {
+  margin-top: 32px;
+  border: 0.5px solid var(--c-light-orange);
+  border-radius: var(--r-card);
+  background: var(--c-back);
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .list {
+    margin-top: 40px;
+  }
+}
+
+.item + .item {
+  border-top: 0.5px solid var(--c-light-orange);
+}
+
+/* ---------- питання ---------- */
+
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 18px 20px;
+  border: 0;
+  background: none;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@media (min-width: 1024px) {
+  .question {
+    padding: 20px 24px;
+    font-size: 20px;
+  }
+}
+
+/* ---------- іконка + / × ---------- */
+
+.icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--c-orange);
+  border-radius: 50%;
+}
+
+.icon::before,
+.icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 1px;
+  background: var(--c-orange);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.icon::before {
+  transform: translate(-50%, -50%);
+}
+
+.icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.itemOpen .icon::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.itemOpen .icon::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* ---------- відповідь ---------- */
+
+.answerWrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.itemOpen .answerWrap {
+  grid-template-rows: 1fr;
+}
+
+.answerInner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .answerWrap,
+  .icon::before,
+  .icon::after,
+  .answer {
+    transition: none;
+  }
+}
+
+.answer {
+  padding: 0 20px 18px;
+  font-size: 16px;
+  font-weight: 350;
+  line-height: 1.5;
+  color: var(--c-muted);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.itemOpen .answer {
+  opacity: 1;
+}
+
+@media (min-width: 1024px) {
+  .answer {
+    padding: 0 24px 20px;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+}

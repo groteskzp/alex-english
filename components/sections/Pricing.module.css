@@ -1,0 +1,248 @@
+.title {
+  margin-top: 16px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.text {
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 350;
+  line-height: 1.5;
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 48px;
+  }
+
+  .text {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+}
+
+/* ---------- сітка ---------- */
+
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* шар = фрейм Formats (1440), по ньому скаляться розмір і дистанції */
+.blobs {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  max-width: var(--container);
+  margin-inline: auto;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    margin-top: 40px;
+  }
+}
+
+/* ---------- картка ---------- */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 18px;
+  border: 0.5px solid var(--c-light-blue);
+  border-radius: var(--r-card);
+  background: var(--c-white);
+  text-align: center;
+}
+
+.blob {
+  position: absolute;
+  max-width: none;
+  height: auto;
+}
+
+.blob1 {
+  left: 0;
+  bottom: 0;
+  width: calc(366 / 1440 * 100%);
+}
+
+.blob2 {
+  top: 8%;
+  left: 40%;
+  width: min(200px, 78%);
+}
+
+.blob3,
+.blob4,
+.blob1 {
+  display: none;
+}
+
+.blob3 {
+  top: 9%;
+  right: 0;
+  width: calc(217 / 1440 * 100%);
+}
+
+.blob4 {
+  right: 1%;
+  bottom: 0;
+  width: calc(226 / 1440 * 100%);
+}
+
+@media (min-width: 768px) {
+  .blob1,
+  .blob2,
+  .blob3,
+  .blob4 {
+    display: block;
+  }
+
+  .blob2 {
+    width: calc(321 / 1440 * 100%);
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    order: var(--order);
+  }
+
+  .featured {
+    gap: 18px  }
+}
+
+.featured {
+  border: 1px solid var(--c-orange);
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--c-sky);
+}
+
+.icon {
+  width: 64px;
+  color: var(--c-sky);
+}
+
+.iconFeatured {
+  width: 72px;
+}
+
+@media (min-width: 1024px) {
+  .featured {
+gap: 16px;
+  }
+
+  .icon {
+    width: 80px;
+  }
+
+  .iconFeatured {
+    width: 96px;
+  }
+}
+
+.priceBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.price {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--c-orange);
+}
+
+.unit {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--c-orange);
+}
+
+@media (min-width: 1024px) {
+  .cardTitle {
+    font-size: 24px;
+  }
+
+  .price {
+    font-size: 64px;
+  }
+}
+
+/* ---------- список ---------- */
+
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  text-align: left;
+}
+
+.feature {
+  display: flex;
+  gap: 8px;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--c-muted);
+}
+
+.feature::before {
+  content: "•";
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .feature {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+}
+
+.cta {
+  /* margin-top: 16px; */
+  border-radius: 16px;
+padding-block: 10px;
+padding-inline: 16px;
+width: 143px;
+height: 47px;
+font-family: "Kyiv*Type Sans", sans-serif;
+font-weight: 500;
+font-size: 18px;
+
+/* line-height: 27px; */ 
+line-height: 1.5;
+color: #fcfaf7;
+}

@@ -1,0 +1,151 @@
+.title {
+  width: 100%;
+  max-width: 685px;
+  margin-top: 16px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.title::after {
+  content: "";
+  display: block;
+  width: 300px;
+  max-width: none;
+  height: 1px;
+  margin-top: 16px;
+  background: var(--c-orange);
+}
+
+.text {
+  margin-top: 16px;
+  max-width: 800px;
+  font-size: 16px;
+  font-weight: 350;
+  line-height: 1.5;
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 48px;
+  }
+
+  .text {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+}
+
+/* ---------- картки ---------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 40px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 20px;
+  border-radius: var(--r-card);
+  background: var(--c-white);
+  color: var(--c-text);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .card {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+.icon {
+  width: 38px;
+}
+
+.iconSky {
+  color: var(--c-sky);
+}
+
+.iconOrange {
+  color: var(--c-orange);
+}
+
+@media (min-width: 1024px) {
+  .icon {
+    width: 80px;
+  }
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.cardText {
+  font-size: 16px;
+  font-weight: 350;
+  line-height: 1.5;
+}
+
+@media (min-width: 1024px) {
+  .cardTitle {
+    font-size: 24px;
+  }
+}
+
+/* ---------- нижній блок ---------- */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--c-light-blue);
+}
+
+@media (min-width: 768px) {
+  .footer {
+    flex-direction: row;
+    gap: 40px;
+  }
+}
+
+.footerLabel {
+  flex-shrink: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--c-light-orange);
+}
+
+.footerText {
+  max-width: 573px;
+  height: 64px;
+  font-size: 16px;
+  font-weight: 350;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .footerText {
+    max-width: 432px;
+    height: 78px;
+    /* margin-left: auto; */
+  }
+}

@@ -1,0 +1,97 @@
+.header {
+  background: var(--c-back);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 18px;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    padding: 16px 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .inner {
+    padding: 16px 72px;
+  }
+}
+
+.logo {
+  font-family: var(--font-titling);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--c-orange);
+  white-space: nowrap;
+}
+
+/* навігація — тільки десктоп */
+.nav {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+}
+
+.navLink {
+  font-size: 20px;
+  font-weight: 350;
+  line-height: 1.5;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--c-orange);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* кнопка — з планшета */
+.cta {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .cta {
+    display: inline-block;
+  }
+}
+
+/* бургер — до десктопа */
+.burger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 4px;
+}
+
+@media (min-width: 1024px) {
+  .burger {
+    display: none;
+  }
+}
+
+.burgerLine {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--c-text);
+}

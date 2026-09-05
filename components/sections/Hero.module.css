@@ -1,0 +1,351 @@
+/* ============================================
+   Брейкпойнти:
+   768  — перемикається РОЗКЛАДКА (стовпчик -> ряд)
+   1024 — перемикаються РОЗМІРИ (типографіка, іконки)
+   ============================================ */
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  overflow: visible;
+}
+
+@media (min-width: 768px) {
+  .top {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+  }
+}
+
+/* ---------- ліва колонка ---------- */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--c-orange);
+  color: var(--c-white);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.badge::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.title {
+  margin-top: 16px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.accent {
+  color: var(--c-sky);
+}
+
+.text {
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 350;
+  line-height: 1.5;
+}
+
+.cta {
+  display: block;
+  width: 100%;
+  margin-top: 24px;
+  box-sizing: border-box;
+}
+
+.brMobile {
+  display: block;
+}
+
+.brDesktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .cta {
+    display: inline-block;
+    width: auto;
+  }
+
+  .brMobile {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 48px;
+  }
+
+  .text {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .brDesktop {
+    display: inline;
+  }
+}
+
+/* ---------- фото ---------- */
+
+.photos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+@media (min-width: 768px) {
+  .photos {
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .photos {
+    gap: 24px;
+  }
+}
+
+.cell {
+  position: relative;
+  overflow: visible;
+}
+
+.tile {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .tile {
+    width: 120px;
+    height: 120px;
+    aspect-ratio: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tile {
+    width: 196px;
+    height: 196px;
+  }
+}
+
+.tile1 {
+  justify-content: flex-end;
+  background: var(--c-light-blue);
+  border-radius: 80px 0 0 80px;
+}
+
+.tile2 {
+  background: var(--c-orange);
+  border-radius: 24px;
+}
+
+.tile3 {
+  background: var(--c-light-orange);
+  border-radius: 24px;
+}
+
+.tile3 .photo {
+  height: 110%;
+}
+
+.tile4 {
+  background: var(--c-sky);
+  border-radius: 0 80px 80px 0;
+}
+
+/* клякси — позаду підкладки, їдуть разом із плиткою */
+.blob {
+  display: none;
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  max-width: none;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .blob {
+    display: block;
+  }
+
+  .blob1 {
+    width: 64px;
+    top: -14%;
+    left: -12%;
+  }
+
+  .blob2 {
+    width: 32px;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    top: auto;
+    transform: translate(35%, 35%);
+  }
+
+  .blob3 {
+    width: 56px;
+    bottom: -16%;
+    left: -18%;
+  }
+
+  .blob4 {
+    width: 28px;
+    top: -8%;
+    left: -12%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .blob1 {
+    width: 100px;
+  }
+
+  .blob2 {
+    width: 48px;
+  }
+
+  .blob3 {
+    width: 84px;
+  }
+
+  .blob4 {
+    width: 42px;
+  }
+}
+
+.photo {
+  width: auto;
+  height: 95%;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+/* ---------- статистика ---------- */
+
+.stats {
+  margin-top: 40px;
+  padding: 16px 24px;
+  border: 1px solid var(--c-light-blue);
+  border-radius: var(--r-card);
+  background: var(--c-back-80);
+}
+
+.statsRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 16px 0;
+  text-align: center;
+}
+
+.statText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat + .stat::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(250px, 100%);
+  height: 1px;
+  background: var(--c-light-blue);
+  transform: translateX(-50%);
+}
+
+@media (min-width: 768px) {
+  .statsRow {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .stat {
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 8px 0;
+    text-align: left;
+  }
+
+  .statText {
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .stat + .stat::before {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .stat {
+    gap: 16px;
+  }
+}
+
+.statIcon {
+  width: 38px;
+  color: var(--c-orange);
+}
+
+@media (min-width: 1024px) {
+  .statIcon {
+    width: 70px;
+  }
+}
+
+.statValue {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.statLabel {
+  font-size: 16px;
+  font-weight: 350;
+  line-height: 1.5;
+  color: var(--c-muted);
+}
